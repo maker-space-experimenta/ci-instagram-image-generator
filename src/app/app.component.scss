@@ -1,0 +1,16 @@
+.header {
+    .header-nav {
+        a {
+            color: #fff;
+        }
+    }
+}
+
+canvas {
+    position: relative;
+    transform-origin: 0 0;
+    width: 1080px;
+    height: 1080px;
+    border: solid 1px red;
+    background-color: blue;
+}
