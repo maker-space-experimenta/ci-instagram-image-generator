@@ -3,6 +3,23 @@
   <header class="header header-6">
     <div class="header-nav">
 
+      <a class="nav-link" style="position: relative; overflow: hidden;">
+        <clr-icon shape="image"></clr-icon>
+        <input accept="image/*" style="opacity: 0; position: absolute; top: 0; left: 0; bottom: 0; right: 0;"
+          class="nav-link" type="file" (change)="fileChangeEvent($event)" />
+      </a>
+
+      <!-- <a class="nav-link" (click)="download($event)">
+        <clr-icon shape="image"></clr-icon>
+      </a> -->
+      <!-- 
+      <a class="nav-link">
+        <cds-file>
+          <label style="display: none;">select files</label>
+          <input type="file" (change)="fileChangeEvent($event)"  />
+        </cds-file>
+      </a> -->
+
     </div>
     <div class="header-actions">
 
@@ -16,16 +33,24 @@
   <div class="content-container">
     <div class="content-area" style="overflow: hidden;">
 
-      <input type="file" (change)="fileChangeEvent($event)" />
+      <!-- <input type="file" (change)="fileChangeEvent($event)" /> -->
 
-      <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="1 / 1"
-        format="png" (imageCropped)="imageCropped($event)"></image-cropper>
+      <!-- <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="1 / 1"
+        format="png" (imageCropped)="imageCropped($event)"></image-cropper> -->
 
       <!-- <img [src]="croppedImage" /> -->
 
+      <div *ngIf="debug">
+        touches {{ countTouches }} <br />
+        distance diff {{ distance_diff }} <br />
+        move x {{ move_x }} <br />
+        move y {{ move_y }} <br />
+        distance {{ distance }}
+      </div>
 
       <canvas #myCanvas id="myCanvas" width="1080" height="1080" resize></canvas>
       <!-- <canvas id="myCanvas"></canvas> -->
+
 
     </div>
   </div>
